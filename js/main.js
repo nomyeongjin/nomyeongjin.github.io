@@ -109,10 +109,10 @@ typeit
   .type(
     '<strong class="home__title-color">사용자의 경험을 고려하는</strong><br />',
   )
-  .type('<strong class="home__title-color-2">NoMyeongjin</strong>', {
+  .type('<strong class="home__title-color-2">NohMyeongjin</strong>', {
     delay: 300,
   })
-  .delete(11)
+  .delete(12)
   .type(
     '웹&nbsp;개발자&nbsp;<strong class="home__title-color-2">노명진</strong>입니다.',
   )
@@ -121,3 +121,25 @@ typeit
 // 안녕하세요. <br />
 // <strong class="home__title-color">사용자의 경험을 고려하는</strong><br />
 // 웹&nbsp;개발자&nbsp;<strong class="home__title-color-2">노명진</strong>입니다.
+
+// 이메일 클라이언트 열기
+const $contactForm = document.getElementById("contactForm");
+
+$contactForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  // 폼 하위 정보를 갖고
+  const name = $contactForm.name.value;
+  const subject = $contactForm.subject.value;
+  const message = $contactForm.message.value;
+  const to = "mjnoh.dev@gmail.com";
+
+  // 이메일 클라이언트 열기
+  location.href =
+    "mailto:" +
+    encodeURIComponent(to) +
+    "?subject=" +
+    encodeURIComponent(`[${name}님 문의]${subject}`) +
+    "&body=" +
+    encodeURIComponent(message);
+});

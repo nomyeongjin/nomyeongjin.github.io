@@ -446,7 +446,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
 
-  width: 70%;
+  width: 100%;
   margin-bottom: 30px;
 }
 
@@ -526,6 +526,8 @@ body {
   margin-bottom: 20px;
   border: 1px solid var(--info-color);
   border-radius: 10px;
+  font-family: "Gothic A1";
+  font-weight: var(--font-weight-medium);
 }
 
 .contact__button {
