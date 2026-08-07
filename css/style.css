@@ -400,6 +400,7 @@ body {
   font-size: 1.4rem;
   font-weight: var(--font-weight-bold);
   margin-bottom: 10px;
+  width: 150px;
 }
 
 .certificate__subname {
@@ -424,7 +425,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 20%;
+  width: 100px;
+  left: 0;
 }
 
 .skills__button {
@@ -445,8 +447,6 @@ body {
   justify-content: left;
   align-items: center;
   flex-wrap: wrap;
-
-  width: 100%;
   margin-bottom: 30px;
 }
 
@@ -480,7 +480,11 @@ body {
 }
 
 .skills__list {
-  display: flex;
+  display: block;
+}
+
+.skills__stack {
+  width: 700px;
 }
 
 /* 스택 콘텐츠 영역 기본 숨김 */
@@ -498,15 +502,84 @@ body {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  max-width: 1024px;
+  flex-wrap: wrap;
 }
 
 .work__card {
-  border-radius: 20px;
-  border: 1px solid var(--grey-color);
-  padding: 20px 15px;
+  padding: 25px 30px;
   margin: 20px;
-  width: 300px;
-  height: 500px;
+  /* min-width: 50%; */
+  max-width: 1024px;
+  border: 1px solid var(--grey-color);
+  border-radius: 20px;
+  box-shadow: var(--box-shadow-1);
+}
+
+.work__title-div {
+  display: flex;
+  font-size: var(--font-size-4);
+  margin: 10px 5px;
+}
+.work__icon {
+  color: var(--primary-color);
+}
+
+.work__img {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.work__share {
+  color: var(--info-color);
+  margin-bottom: 10px;
+  margin-right: 5px;
+  position: relative;
+  bottom: 0;
+}
+
+.work__title {
+  font-weight: var(--font-weight-bold);
+  margin-left: 8px;
+  font-family: "Paperozi";
+  color: var(--secondary-color);
+}
+
+.work__date {
+  color: var(--info-color);
+  margin: 5px 0;
+}
+
+.work__info {
+  background: var(--grey-color);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+  line-height: 1.5rem;
+}
+
+.work__text {
+  line-height: 1.5rem;
+}
+
+.work__strong {
+  font-weight: var(--font-weight-bold);
+}
+
+.work__stack {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin: 15px 5px;
+}
+
+.work__skill {
+  color: var(--white-color);
+  background: var(--primary-color);
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 5px 5px;
 }
 
 /*------ Contact -------*/
@@ -622,6 +695,7 @@ body {
     right: -100%;
     padding: 2rem;
     transition: 0.2s;
+    box-shadow: var(--box-shadow-1);
   }
 
   .nav__list {
@@ -664,8 +738,22 @@ body {
     flex-direction: column;
   }
 
+  .skills__list {
+    display: block;
+    width: 500px;
+  }
+
+  .skills__img {
+    margin-bottom: 10px;
+  }
+
+  .skills__stack {
+    min-height: 620px;
+  }
+
   .skills__menu {
     flex-direction: row;
+    margin-top: 50px;
     margin-bottom: 20px;
   }
 
@@ -677,5 +765,13 @@ body {
   .skills__button:hover {
     border: none;
     border-bottom: 3px solid var(--primary-color);
+  }
+
+  .work__container {
+    flex-direction: column;
+  }
+
+  .work__card {
+    width: 100%;
   }
 }

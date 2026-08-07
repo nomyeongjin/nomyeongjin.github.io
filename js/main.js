@@ -67,7 +67,7 @@ scrollReveal.reveal(
   ".home__data, .about__container, .certificate__data, .skills__stack, .skills__menu",
 );
 scrollReveal.reveal(".about__data", { delay: 400 });
-scrollReveal.reveal(" .contact__input", { interval: 200 });
+scrollReveal.reveal(" .contact__input,.work__card", { interval: 200 });
 // scrollReveal.reveal(".skills__list", { interval: 200 });
 
 // skills 창
@@ -104,6 +104,7 @@ const typeit = new TypeIt("#typeit", {
   waitUntilVisible: true,
 });
 
+// 타이핑 액션
 typeit
   .type("안녕하세요.<br/>")
   .type(
