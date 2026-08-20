@@ -146,17 +146,21 @@ $contactForm.addEventListener("submit", function (event) {
     encodeURIComponent(message);
 });
 
-// work 버튼 접기
-function toggleDetail(buttonElement) {
+// window 전역 객체에 직접 등록하여 인라인 onclick에서 인식 가능하도록 수정
+window.toggleDetail = function (buttonElement) {
   const parentCard = buttonElement.closest(".work__card");
+  if (!parentCard) return;
+
   const content = parentCard.querySelector(".work__detail-content");
   const arrow = parentCard.querySelector(".btn-icon");
 
-  // collapsed 클래스 토글 (내용 펼치기/접기)
+  // collapsed 클래스 토글
   const isCollapsed = content.classList.toggle("collapsed");
 
   // 아이콘 180도 회전용 active 클래스 토글
-  arrow.classList.toggle("active");
+  if (arrow) {
+    arrow.classList.toggle("active");
+  }
 
   // 버튼 텍스트 변경
   if (isCollapsed) {
@@ -164,4 +168,4 @@ function toggleDetail(buttonElement) {
   } else {
     buttonElement.textContent = "주요 성과 및 기능 접기";
   }
-}
+};
