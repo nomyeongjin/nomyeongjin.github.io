@@ -64,11 +64,12 @@ const scrollReveal = ScrollReveal({
   delay: 200,
 });
 scrollReveal.reveal(
-  ".home__data, .about__container, .certificate__data, .skills__stack, .skills__menu",
+  ".home__data, .about__container, .certificate__data, .skills__stack, .skills__menu,.work__card",
 );
-scrollReveal.reveal(".about__data", { delay: 400 });
-scrollReveal.reveal(" .contact__input,.work__card", { interval: 200 });
-// scrollReveal.reveal(".skills__list", { interval: 200 });
+scrollReveal.reveal(".about__data, .work__info-img", { delay: 400 });
+scrollReveal.reveal(" .contact__input, .work__detail-btn, .work__stack", {
+  interval: 200,
+});
 
 // skills 창
 
@@ -144,3 +145,23 @@ $contactForm.addEventListener("submit", function (event) {
     "&body=" +
     encodeURIComponent(message);
 });
+
+// work 버튼 접기
+function toggleDetail(buttonElement) {
+  const parentCard = buttonElement.closest(".work__card");
+  const content = parentCard.querySelector(".work__detail-content");
+  const arrow = parentCard.querySelector(".btn-icon");
+
+  // collapsed 클래스 토글 (내용 펼치기/접기)
+  const isCollapsed = content.classList.toggle("collapsed");
+
+  // 아이콘 180도 회전용 active 클래스 토글
+  arrow.classList.toggle("active");
+
+  // 버튼 텍스트 변경
+  if (isCollapsed) {
+    buttonElement.textContent = "주요 성과 및 기능 보기";
+  } else {
+    buttonElement.textContent = "주요 성과 및 기능 접기";
+  }
+}
